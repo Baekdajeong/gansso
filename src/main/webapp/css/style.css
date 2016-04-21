@@ -1,0 +1,15 @@
+@CHARSET "EUC-KR";
+
+.jumbotron {
+   margin-bottom:0px;
+}
+.left carousel-control, right carousel-control {
+	background-image: none;
+	}
+#wrap{
+	width:1000px;
+	margin:auto;
+	}
+.table {
+	text-align:left;
+}
