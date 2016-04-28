@@ -38,7 +38,7 @@
         <li><a href="#">일정</a></li>
         <li><a href="#">사진첩</a></li>
         <li><a href="#">가계부</a></li>
-        <li><a href="Admin_Member.jsp">회원관리</a></li>
+        <li><a href="Admin_Member.do">회원관리</a></li>
         <li><a href="#">공지사항</a></li>
         <li><a href="#"><u>회원가입</u></a></li>
       </ul>

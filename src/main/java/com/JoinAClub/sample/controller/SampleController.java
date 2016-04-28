@@ -22,6 +22,7 @@ public class SampleController {
     @Resource(name="sampleService")
     private SampleService sampleService;
      
+    //게시판출력 테스트
     @RequestMapping(value="/sample/openSampleBoardList.do")
     public ModelAndView openSampleBoardList(Map<String,Object> commandMap) throws Exception{
         ModelAndView mv = new ModelAndView("/boardList");
@@ -33,6 +34,7 @@ public class SampleController {
     }
     
     
+    //테스트
     @RequestMapping(value="/sample/testMapArgumentResolver.do")
     public ModelAndView testMapArgumentResolver(CommandMap commandMap) throws Exception{
         ModelAndView mv = new ModelAndView("");
@@ -47,6 +49,98 @@ public class SampleController {
         }
         return mv;
     }
+    
+    //admin_member 출력
+    @RequestMapping(value="/Admin_Member.do")
+    public ModelAndView admin_Member(Map<String,Object> commandMap) throws Exception{
+    	 ModelAndView mv = new ModelAndView("/Admin_Member");
+         
+         List<Map<String,Object>> list = sampleService.selectBoardList(commandMap);
+         mv.addObject("list", list);
+                    
+        
+        
+        return mv;
+    }
+    
+    //admin_member 입력
+    @RequestMapping(value="/Member_Insert.do")
+    public ModelAndView insertBoard(CommandMap commandMap) throws Exception{
+        ModelAndView mv = new ModelAndView("redirect:/Admin_Member.do");
+         
+        sampleService.insertBoard(commandMap.getMap());
+         
+        return mv;
+    }
+    
+    //멤버수정Ajax
+    @RequestMapping(value="/Member_ModifyAjax.do")
+    public ModelAndView modifyBoard(CommandMap commandMap) throws Exception{
+    	 ModelAndView mv1 = new ModelAndView("/Ajax_Modify");
+    	    	 
+         
+    	 Map<String,Object> list = sampleService.selectModifyList(commandMap.getMap()); 
+         
+         mv1.addObject("list1", list);
+         
+                    
+        
+        
+        return mv1;
+    }
+    //멤버수정
+    @RequestMapping(value="/Member_Modify.do")
+    public ModelAndView updateBoard(CommandMap commandMap) throws Exception{
+        ModelAndView mv = new ModelAndView("redirect:/Admin_Member.do");
+         
+        sampleService.updateBoard(commandMap.getMap());
+         
+        return mv;
+    }
+    
+    //멤버삭제
+    @RequestMapping(value="Member_Delete.do")
+    public ModelAndView deleteBoard(CommandMap commandMap) throws Exception{
+        ModelAndView mv = new ModelAndView("redirect:/Admin_Member.do");
+         
+        sampleService.deleteBoard(commandMap.getMap());
+         
+        return mv;
+    }
+    
+    @RequestMapping(value="/Admin_Notice.do")
+    public ModelAndView adminn_Notice(CommandMap commandMap) throws Exception{
+        ModelAndView mv = new ModelAndView("Admin_Notice");
+         
+        
+         
+        return mv;
+    }
+    
+    @RequestMapping(value="/Admin_PictureList.do")
+    public ModelAndView admin_PictureList(CommandMap commandMap) throws Exception{
+        ModelAndView mv = new ModelAndView("Admin_PictureList");
+         
+        
+         
+        return mv;
+    }
+    
+    @RequestMapping(value="/Join.do")
+    public ModelAndView join(CommandMap commandMap) throws Exception{
+        ModelAndView mv = new ModelAndView("Join");
+         
+        
+         
+        return mv;
+    }
+    
+    
+    
+    
+    
+    
+    
     
     
     

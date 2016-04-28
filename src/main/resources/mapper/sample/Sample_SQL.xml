@@ -4,7 +4,7 @@
 <mapper namespace="sample">
     
     <select id="selectBoardList" parameterType="hashmap" resultType="hashmap">
-        <![CDATA[
+        
             SELECT
                MEMBERID,
                 TEAMID,
@@ -16,9 +16,86 @@
                 CLASS
             FROM
                 member
+              
+           
        
-        ]]>
+       
+        
     </select>
+    
+    
+    <select id="selectModifyList" parameterType="hashmap" resultType="hashmap">
+        
+            SELECT
+               MEMBERID,
+                TEAMID,
+                TEMNAME,
+                NAME,
+                AGE,
+                TEL,
+                POS,
+                CLASS
+            FROM
+                member
+            WHERE
+             
+            	MEMBERID = #{memberid}
+           
+       
+       
+        
+    </select>
+    
+    
+    <insert id="insertBoard" parameterType="hashmap">
+    <![CDATA[
+        INSERT INTO member
+        (
+        	
+            NAME,
+            AGE, 
+            TEL, 
+            POS, 
+            CLASS, 
+            TEAMID, 
+            TEMNAME
+        )
+        VALUES
+        (
+             
+            #{name}, 
+            #{age}, 
+            #{tel}, 
+            #{pos}, 
+            #{class}, 
+            1,
+            0
+            
+        )
+    ]]>
+	</insert>
+	
+    <update id="updateBoard" parameterType="hashmap">
+    <![CDATA[
+        UPDATE member 
+        SET
+            NAME = #{mname},
+            AGE = #{mage} , 
+            TEL = #{mtel}, 
+            POS = #{mpos}, 
+            CLASS = #{mclass}
+            
+        WHERE
+        
+            MEMBERID = #{h_memberid}   
+    ]]>
+	</update>
      
+    
+    <delete id="deleteBoard" parameterType="hashmap">
+    <![CDATA[
+        DELETE FROM member WHERE memberid = #{memberid}
+    ]]>
+	</delete>
      
 </mapper>
