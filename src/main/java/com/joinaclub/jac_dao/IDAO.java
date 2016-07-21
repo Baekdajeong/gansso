@@ -1,10 +1,10 @@
-package com.joinaclub.jac_dao;
+package com.JoinAClub.jac_dao;
 
 
 
 public interface IDAO {
 
 	
-	/*   ¿¹Á¦ ) public ArrayList<ContentDto> listDao();  */
+	/*   ï¿½ï¿½ï¿½ï¿½ ) public ArrayList<ContentDto> listDao();  */
 	
 }

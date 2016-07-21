@@ -1,4 +1,4 @@
-package com.joinaclub.jac_dto;
+package com.JoinAClub.jac_dto;
 
 public class JDTO {
 

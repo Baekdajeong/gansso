@@ -1,12 +1,11 @@
-package com.joinaclub.jac_controller;
+package com.JoinAClub.jac_controller;
 
 import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-
-import com.joinaclub.jac_dao.ContentDAO;
+import com.JoinAClub.jac_dao.ContentDAO;
 
 
 @Controller
@@ -26,7 +25,7 @@ public class JacController {
 	
 	
 	
-	/* ¿¹Á¦)
+	/* ï¿½ï¿½ï¿½ï¿½)
 	 @RequestMapping("/list")
 	public String list(Model model) {
 
